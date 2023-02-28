@@ -51,10 +51,10 @@ public class PhoneBookTest {
 
     @Test
     public void testfindByName() {
-        String name = "Ася";
+       String name = "Ася";
         String expected = "89178534232";
 
-        String result = pb.findByNumer(name);
+        String result = pb.findByName(name);
 
         assertEquals(expected, result);
     }
