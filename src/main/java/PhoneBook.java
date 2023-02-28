@@ -1,6 +1,13 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class PhoneBook {
+    Map<String, String> map = new HashMap<>();
+
     public int add(String name, String tel) {
-        return 0;
+        map.put(name, tel);
+
+        return map.size();
     }
 
 }
