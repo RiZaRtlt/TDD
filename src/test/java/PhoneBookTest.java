@@ -3,7 +3,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
 public class PhoneBookTest {
     PhoneBook pb;
@@ -57,5 +58,10 @@ public class PhoneBookTest {
         String result = pb.findByName(name);
 
         assertEquals(expected, result);
+    }
+
+    @Test
+    public void testprintAllNames() {
+        assertDoesNotThrow(() -> pb.printAllNames());
     }
 }

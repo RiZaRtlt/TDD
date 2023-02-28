@@ -28,4 +28,8 @@ public class PhoneBook {
     public String findByName(String name) {
         return map.get(name);
     }
+
+    public void printAllNames() throws Exception {
+        throw new Exception("Заглушка");
+    }
 }
