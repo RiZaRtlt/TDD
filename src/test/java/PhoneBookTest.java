@@ -48,4 +48,14 @@ public class PhoneBookTest {
 
         assertEquals(expected, result);
     }
+
+    @Test
+    public void testfindByName() {
+        String name = "Ася";
+        String expected = "89178534232";
+
+        String result = pb.findByNumer(name);
+
+        assertEquals(expected, result);
+    }
 }
