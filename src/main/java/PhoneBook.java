@@ -1,9 +1,7 @@
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 public class PhoneBook {
-    Map<String, String> map = new HashMap<>();
+    Map<String, String> map = new TreeMap<>(String.CASE_INSENSITIVE_ORDER);
 
     public int add(String name, String tel) {
         map.put(name, tel);
@@ -30,6 +28,19 @@ public class PhoneBook {
     }
 
     public void printAllNames() throws Exception {
-        throw new Exception("Заглушка");
+        if (map.size() != 0) {
+            StringBuilder buf = new StringBuilder();
+            Iterator<Map.Entry<String, String>> itr = map.entrySet().iterator();
+            while(itr.hasNext()) {
+                Map.Entry<String, String> entry = itr.next();
+
+                buf.append(entry.getKey());
+                buf.append("\n");
+            }
+
+            System.out.println(buf);
+        } else {
+            throw new Exception("Массив пустой");
+        }
     }
 }
