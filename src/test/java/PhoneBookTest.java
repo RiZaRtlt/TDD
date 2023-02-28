@@ -25,10 +25,25 @@ public class PhoneBookTest {
 
     @Test
     public void testAdd() {
-        String name = "Гриша", tel = "891785858585";
-        int expected = 1;
+        String name1 = "Гриша", tel1 = "891785858585";
+        String name2 = "Ася", tel2 = "89178534232";
+        String name3 = "Муся", tel3 = "89242141232";
 
-        int result = pb.add(name,  tel);
+        int expected = 3;
+
+        pb.add(name1,  tel1);
+        pb.add(name2,  tel2);
+        int result = pb.add(name3,  tel3);
+
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void testfindByNumer() {
+        String tel = "89178534232";
+        String expected = "Ася";
+
+        String result = pb.findByNumer(tel);
 
         assertEquals(expected, result);
     }

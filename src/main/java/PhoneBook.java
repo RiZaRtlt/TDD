@@ -10,4 +10,7 @@ public class PhoneBook {
         return map.size();
     }
 
+    public String findByNumer(String tel) {
+        return null;
+    }
 }
