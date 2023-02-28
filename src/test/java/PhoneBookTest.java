@@ -11,6 +11,11 @@ public class PhoneBookTest {
     @BeforeEach
     public void init() {
         pb = new PhoneBook();
+
+        String name1 = "Гриша", tel1 = "891785858585";
+        String name2 = "Ася", tel2 = "89178534232";
+        pb.add(name1,  tel1);
+        pb.add(name2,  tel2);
     }
 
     @BeforeAll
@@ -25,15 +30,11 @@ public class PhoneBookTest {
 
     @Test
     public void testAdd() {
-        String name1 = "Гриша", tel1 = "891785858585";
-        String name2 = "Ася", tel2 = "89178534232";
-        String name3 = "Муся", tel3 = "89242141232";
+        String name = "Муся", tel = "89242141232";
 
         int expected = 3;
 
-        pb.add(name1,  tel1);
-        pb.add(name2,  tel2);
-        int result = pb.add(name3,  tel3);
+        int result = pb.add(name,  tel);
 
         assertEquals(expected, result);
     }
